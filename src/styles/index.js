@@ -1,10 +1,8 @@
 import { StyleSheet } from 'react-native'
-import styleColor from './color'
-import styleFontSize from './fontSize'
+import utility from './utility'
 
 const baseStyles = StyleSheet.create({
-  ...styleColor,
-  ...styleFontSize,
+  ...utility,
 })
 
 export default baseStyles
