@@ -1,21 +1,28 @@
 import { useState } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
-import { TextInput, Button } from 'react-native-paper'
 import baseStyles from '~/styles'
 import AuthLayout from '~/layout/AuthLayout'
 import PrimaryInput from '~/components/primary/PrimaryInput'
 import HStack from '~/components/base/HStack'
+import PasswordIcon from '~/components/PasswordIcon'
+import PrimaryButton from '~/components/primary/PrimaryButton'
+import BaseLink from '~/components/base/BaseLink'
+import BaseText from '~/components/base/BaseText'
+import ContentView from '~/components/base/ContentView'
 
 function SignUp() {
   const [text, setText] = useState('')
   const [showPassword, setShowPassword] = useState(true)
+  const hasErrors = () => {
+    return !text.includes('@') && text !== ''
+  }
 
   return (
     <AuthLayout>
       <View style={styles.logoContainer}>
         <Text style={styles.logoFont}>Buat Akun</Text>
       </View>
-      <View style={styles.inputContainer}>
+      <ContentView>
         <PrimaryInput
           label="Nama Lengkap"
           mode="outlined"
@@ -27,6 +34,9 @@ function SignUp() {
           mode="outlined"
           value={text}
           onChangeText={text => setText(text)}
+          error={hasErrors()}
+          helperText="Email address is invalid!"
+          helperVisible={hasErrors()}
         />
         <PrimaryInput
           label="Password"
@@ -35,17 +45,10 @@ function SignUp() {
           value={text}
           onChangeText={text => setText(text)}
           right={
-            !showPassword ? (
-              <TextInput.Icon
-                icon="eye"
-                onPress={() => setShowPassword(!showPassword)}
-              />
-            ) : (
-              <TextInput.Icon
-                icon="eye-off"
-                onPress={() => setShowPassword(!showPassword)}
-              />
-            )
+            <PasswordIcon
+              showPassword={showPassword}
+              setShowPassword={setShowPassword}
+            />
           }
         />
         <PrimaryInput
@@ -55,41 +58,29 @@ function SignUp() {
           value={text}
           onChangeText={text => setText(text)}
           right={
-            !showPassword ? (
-              <TextInput.Icon
-                icon="eye"
-                onPress={() => setShowPassword(!showPassword)}
-              />
-            ) : (
-              <TextInput.Icon
-                icon="eye-off"
-                onPress={() => setShowPassword(!showPassword)}
-              />
-            )
+            <PasswordIcon
+              showPassword={showPassword}
+              setShowPassword={setShowPassword}
+            />
           }
         />
-        <Button
-          mode="contained"
-          style={styles.submitButton}
-          onPress={() => console.log('Pressed')}>
-          <Text style={styles.submitText}>Daftar</Text>
-        </Button>
-      </View>
+        <PrimaryButton onPress={() => console.log('Pressed')}>
+          Daftar
+        </PrimaryButton>
+      </ContentView>
       <View style={styles.confirmationContainer}>
-        <Text style={styles.navigateRegisterText}>
-          Dengan mendaftar, saya menyetujui
-        </Text>
+        <BaseText>Dengan mendaftar, saya menyetujui</BaseText>
         <HStack
           style={{
             marginBottom: baseStyles.space.lg,
           }}>
-          <Text style={styles.registerText}>Syarat dan Ketentuan</Text>
-          <Text style={styles.text}>dan</Text>
-          <Text style={styles.registerText}>Kebijakan Privasi</Text>
+          <BaseLink>Syarat dan Ketentuan</BaseLink>
+          <BaseText>dan</BaseText>
+          <BaseLink>Kebijakan Privasi</BaseLink>
         </HStack>
         <HStack>
-          <Text style={styles.text}>Sudah memiliki akun?</Text>
-          <Text style={styles.registerText}>Masuk</Text>
+          <BaseText>Sudah memiliki akun?</BaseText>
+          <BaseLink>Masuk</BaseLink>
         </HStack>
       </View>
     </AuthLayout>

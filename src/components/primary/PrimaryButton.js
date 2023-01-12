@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   submitButton: {
     paddingVertical: baseStyles.space.xs,
     borderRadius: baseStyles.radius.md,
-    marginVertical: baseStyles.space.md,
+    marginBottom: baseStyles.space.sm,
   },
   submitText: {
     fontSize: baseStyles.font.size.sm,

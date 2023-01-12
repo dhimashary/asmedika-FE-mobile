@@ -6,12 +6,27 @@ import PrimaryInput from '~/components/primary/PrimaryInput'
 import PrimaryButton from '~/components/primary/PrimaryButton'
 import BaseText from '~/components/base/BaseText'
 import ContentView from '~/components/base/ContentView'
+import { Portal, Modal } from 'react-native-paper'
+import BaseModal from '~/components/base/BaseModal'
 
 function PasswordText() {
   const [text, setText] = useState('')
+  const [visible, setVisible] = useState(false)
 
   return (
     <AuthLayout>
+      <BaseModal visible={visible} setVisible={setVisible}>
+        <Text style={styles.modalHeader}>Email telah dikirim</Text>
+        <Text style={styles.modalText}>
+          Instruksi atur ulang password telah dikirim ke email email@email.com
+        </Text>
+        <PrimaryButton
+          onPress={() => {
+            setVisible(false)
+          }}>
+          OK
+        </PrimaryButton>
+      </BaseModal>
       <View style={styles.logoContainer}>
         <Text style={styles.logoFont}>Atur Ulang Password</Text>
         <BaseText>
@@ -26,7 +41,10 @@ function PasswordText() {
           value={text}
           onChangeText={text => setText(text)}
         />
-        <PrimaryButton onPress={() => console.log('Pressed')}>
+        <PrimaryButton
+          onPress={() => {
+            setVisible(true)
+          }}>
           Lanjut
         </PrimaryButton>
       </ContentView>
@@ -47,6 +65,16 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '90%',
+  },
+  modalHeader: {
+    fontFamily: 'nunitoSemiBold',
+    fontSize: baseStyles.font.size.md,
+    textAlign: 'center',
+    marginBottom: baseStyles.space.sm,
+  },
+  modalText: {
+    textAlign: 'center',
+    marginBottom: baseStyles.space.sm,
   },
 })
 

@@ -7,6 +7,7 @@ const theme = {
     primary: '#7447D3',
     secondary: '#B9A3E9',
     tertiary: '#3A87F8',
+    error: '#EE646C',
   },
 }
 

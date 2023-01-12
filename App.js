@@ -8,19 +8,17 @@ import {
   Nunito_700Bold,
 } from '@expo-google-fonts/nunito'
 import { Provider as PaperProvider } from 'react-native-paper'
-import { useTheme } from 'react-native-paper'
+import theme from '~/theme/paperTheme'
 import SignUp from '~/features/SignUp'
-import SignIn from '~/features/SignIn'
 import PasswordText from '~/features/PasswordReset'
 
-export default function Main() {
+export default function App() {
   let [fontsLoaded] = useFonts({
     nunitoLight: Nunito_300Light,
     nunitoMedium: Nunito_500Medium,
     nunitoSemiBold: Nunito_600SemiBold,
     nunitoBold: Nunito_700Bold,
   })
-  const theme = useTheme()
 
   if (!fontsLoaded) {
     return (
@@ -31,7 +29,7 @@ export default function Main() {
   }
   return (
     <PaperProvider theme={theme}>
-      <SignIn />
+      <SignUp />
     </PaperProvider>
   )
 }
