@@ -4,7 +4,7 @@ import baseStyles from '~/styles'
 
 function AuthLayout({ children }) {
   return (
-    <View style={baseStyles.flexCenter}>
+    <View style={[baseStyles.flexCenter, styles.bgWhite]}>
       <ImageBackground
         style={styles.bgImage}
         source={bgFloat}></ImageBackground>
@@ -20,6 +20,9 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     justifyContent: 'center',
     opacity: 0.9,
+  },
+  bgWhite: {
+    backgroundColor: 'white',
   },
   content: {
     flex: 3,

@@ -12,9 +12,9 @@ function PrimaryButton({ children, ...rest }) {
 
 const styles = StyleSheet.create({
   submitButton: {
-    paddingVertical: baseStyles.space.xs,
+    // paddingVertical: baseStyles.space.xs,
     borderRadius: baseStyles.radius.md,
-    marginBottom: baseStyles.space.sm,
+    // marginBottom: baseStyles.space.sm,
   },
   submitText: {
     fontSize: baseStyles.font.size.sm,

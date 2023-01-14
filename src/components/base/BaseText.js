@@ -8,7 +8,7 @@ export default function BaseText({ children, style, ...rest }) {
       style={{
         fontSize: baseStyles.font.size.sm,
         fontFamily: 'nunitoLight',
-        marginHorizontal: baseStyles.space.xs,
+        // marginHorizontal: baseStyles.space.xs,
         ...style,
       }}>
       {children}

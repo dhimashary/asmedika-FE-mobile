@@ -10,7 +10,7 @@ import BaseText from '~/components/base/BaseText'
 import BaseLink from '~/components/base/BaseLink'
 import PasswordIcon from '~/components/PasswordIcon'
 
-function SignIn() {
+function SignIn({ navigation }) {
   const [text, setText] = useState('')
   const [showPassword, setShowPassword] = useState(true)
 
@@ -39,12 +39,17 @@ function SignIn() {
           }
         />
         <BaseLink style={styles.textForgotPassword}>Lupa password?</BaseLink>
-        <PrimaryButton onPress={() => console.log('Pressed')}>
+        <PrimaryButton onPress={() => navigation.navigate('Main')}>
           Masuk
         </PrimaryButton>
       </ContentView>
       <View style={styles.registerContainer}>
-        <BaseText>Belum memiliki akun?</BaseText>
+        <BaseText
+          style={{
+            marginRight: baseStyles.space.xs,
+          }}>
+          Belum memiliki akun?
+        </BaseText>
         <BaseLink>Daftar</BaseLink>
       </View>
     </AuthLayout>
@@ -64,7 +69,7 @@ const styles = StyleSheet.create({
   },
   logoFont: {
     fontSize: baseStyles.font.size.lg,
-    color: baseStyles.color.base,
+    color: baseStyles.color.primary,
     fontFamily: 'nunitoBold',
   },
   textForgotPassword: {

@@ -1,7 +1,7 @@
 const utility = {
   color: {
-    base: '#7447D3',
-    secondary: '#B9A3E9',
+    primary: '#7447D3',
+    secondary: '#F0EBFB',
     tertiary: '#3A87F8',
   },
   font: {

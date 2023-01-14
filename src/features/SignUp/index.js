@@ -75,11 +75,21 @@ function SignUp() {
             marginBottom: baseStyles.space.lg,
           }}>
           <BaseLink>Syarat dan Ketentuan</BaseLink>
-          <BaseText>dan</BaseText>
+          <BaseText
+            style={{
+              marginHorizontal: baseStyles.space.xs,
+            }}>
+            dan
+          </BaseText>
           <BaseLink>Kebijakan Privasi</BaseLink>
         </HStack>
         <HStack>
-          <BaseText>Sudah memiliki akun?</BaseText>
+          <BaseText
+            style={{
+              marginRight: baseStyles.space.xs,
+            }}>
+            Sudah memiliki akun?
+          </BaseText>
           <BaseLink>Masuk</BaseLink>
         </HStack>
       </View>
@@ -100,7 +110,7 @@ const styles = StyleSheet.create({
   },
   logoFont: {
     fontSize: baseStyles.font.size.lg,
-    color: baseStyles.color.base,
+    color: baseStyles.color.primary,
     fontFamily: 'nunitoBold',
   },
   inputContainer: {

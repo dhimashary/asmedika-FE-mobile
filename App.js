@@ -9,8 +9,8 @@ import {
 } from '@expo-google-fonts/nunito'
 import { Provider as PaperProvider } from 'react-native-paper'
 import theme from '~/theme/paperTheme'
-import SignUp from '~/features/SignUp'
-import PasswordText from '~/features/PasswordReset'
+import MainStack from '~/navigations/navigators/MainStack'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -29,7 +29,9 @@ export default function App() {
   }
   return (
     <PaperProvider theme={theme}>
-      <SignUp />
+      <SafeAreaProvider>
+        <MainStack />
+      </SafeAreaProvider>
     </PaperProvider>
   )
 }

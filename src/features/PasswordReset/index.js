@@ -6,10 +6,9 @@ import PrimaryInput from '~/components/primary/PrimaryInput'
 import PrimaryButton from '~/components/primary/PrimaryButton'
 import BaseText from '~/components/base/BaseText'
 import ContentView from '~/components/base/ContentView'
-import { Portal, Modal } from 'react-native-paper'
 import BaseModal from '~/components/base/BaseModal'
 
-function PasswordText() {
+function PasswordReset() {
   const [text, setText] = useState('')
   const [visible, setVisible] = useState(false)
 
@@ -56,10 +55,11 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: 'center',
     marginBottom: baseStyles.space.md,
+    width: '90%',
   },
   logoFont: {
     fontSize: baseStyles.font.size.lg,
-    color: baseStyles.color.base,
+    color: baseStyles.color.primary,
     fontFamily: 'nunitoBold',
     marginBottom: baseStyles.space.md,
   },
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default PasswordText
+export default PasswordReset
