@@ -8,6 +8,7 @@ import { ScrollView } from 'react-native'
 import SelectService from './SelectService'
 import VaccineReason from './VaccineReason'
 import baseStyles from '~/styles'
+import AboutUs from './AboutUs'
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
           }}>
           <SelectService />
           <VaccineReason />
+          <AboutUs />
         </View>
       </ScrollView>
     </ScreenContainer>

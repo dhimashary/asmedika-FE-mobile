@@ -8,9 +8,9 @@ export default function BaseHeader({ children, style, ...rest }) {
   return (
     <View
       style={{
-        width,
-        height: height / 12,
-        justifyContent: 'center',
+        // width,
+        // height: height / 12,
+        // justifyContent: 'center',
         alignItems: 'center',
         ...style,
       }}

@@ -4,8 +4,7 @@ import serviceSwab from '~assets/service-swab.png'
 import serviceVaccine from '~assets/service-vaccine.png'
 import serviceAntibodi from '~assets/service-antibodi.png'
 import SelectServiceItem from './SelectServiceItem'
-
-const height = Dimensions.get('window').height
+import BaseTitle from '~/components/base/BaseTitle'
 
 const services = [
   {
@@ -28,14 +27,7 @@ export default function SelectService() {
       style={{
         width: '100%',
       }}>
-      <Text
-        style={{
-          fontSize: baseStyles.font.size.md,
-          fontFamily: 'nunitoSemiBold',
-          marginBottom: baseStyles.space.md,
-        }}>
-        Pilih Jenis Layanan
-      </Text>
+      <BaseTitle>Pilih Jenis Layanan</BaseTitle>
       {services.map(service => (
         <SelectServiceItem service={service} key={service.text} />
       ))}

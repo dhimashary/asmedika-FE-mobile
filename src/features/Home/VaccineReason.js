@@ -1,9 +1,8 @@
-import { Image } from 'react-native'
-import { View, Text } from 'react-native'
-import HStack from '~/components/base/HStack'
+import { View } from 'react-native'
 import PrimaryButton from '~/components/primary/PrimaryButton'
 import baseStyles from '~/styles'
-import bullet from '~assets/bullet.png'
+import VaccineReasonItem from './VaccineReasonItem'
+import BaseTitle from '~/components/base/BaseTitle'
 
 const reasons = [
   {
@@ -25,39 +24,11 @@ export default function VaccineReason() {
     <View
       style={{
         width: '100%',
+        marginBottom: baseStyles.space.md,
       }}>
-      <Text
-        style={{
-          fontSize: baseStyles.font.size.md,
-          fontFamily: 'nunitoSemiBold',
-          marginBottom: baseStyles.space.md,
-        }}>
-        Kenapa Harus Vaksin?
-      </Text>
+      <BaseTitle>Kenapa Harus Vaksin?</BaseTitle>
       {reasons.map(reason => (
-        <HStack
-          style={{
-            marginBottom: baseStyles.space.sm,
-            alignItems: 'center',
-          }}
-          key={reason.id}>
-          <Image
-            source={bullet}
-            style={{
-              flex: 1,
-              marginRight: baseStyles.space.xs,
-            }}
-            resizeMode="contain"
-          />
-          <Text
-            style={{
-              flex: 11,
-              fontFamily: 'nunitoLight',
-              fontSize: baseStyles.font.size.sm,
-            }}>
-            {reason.text}
-          </Text>
-        </HStack>
+        <VaccineReasonItem reason={reason} key={reason.id} />
       ))}
       <PrimaryButton>Daftar Vaksin Sekarang</PrimaryButton>
     </View>

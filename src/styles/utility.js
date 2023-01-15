@@ -32,6 +32,23 @@ const utility = {
     lg: 36,
     xl: 40,
   },
+  shadow: {
+    md: {
+      borderRadius: 16,
+      padding: 16,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 1,
+      },
+      shadowOpacity: 0.22,
+      shadowRadius: 2.22,
+      elevation: 3,
+      backgroundColor: 'white',
+      width: '100%',
+      marginBottom: 16,
+    },
+  },
 }
 
 export default utility
