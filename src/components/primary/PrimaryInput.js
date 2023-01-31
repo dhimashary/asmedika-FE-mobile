@@ -19,6 +19,7 @@ export default function PrimaryInput({
           width: '100%',
           backgroundColor: 'white',
         }}
+        theme={{ roundness: baseStyles.space.xs }}
       />
       <HelperText
         type="error"

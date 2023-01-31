@@ -58,12 +58,12 @@ export default function OurLocation() {
         style={{
           flex: 1,
           // backgroundColor: 'red',
-          alignItems: 'center',
+          // alignItems: 'center',
         }}>
         <HStack
           style={{
             padding: baseStyles.space.sm,
-            alignItems: 'center',
+            // alignItems: 'center',
           }}>
           <View>
             <MaterialCommunityIcons

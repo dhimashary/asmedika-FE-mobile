@@ -3,7 +3,7 @@ import baseStyles from '~/styles'
 
 export default function BaseTitle({ style, children, ...rest }) {
   return (
-    <Text style={{ ...styles.title, ...style }} {...rest}>
+    <Text style={[styles.title, { ...style }]} {...rest}>
       {children}
     </Text>
   )

@@ -9,6 +9,7 @@ import SelectService from './SelectService'
 import VaccineReason from './VaccineReason'
 import baseStyles from '~/styles'
 import AboutUs from './AboutUs'
+import CheckVaccine from './CheckVaccine'
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
             paddingHorizontal: baseStyles.space.sm,
           }}>
           <SelectService />
+          <CheckVaccine />
           <VaccineReason />
           <AboutUs />
         </View>

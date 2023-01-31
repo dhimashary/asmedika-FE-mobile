@@ -34,8 +34,6 @@ const utility = {
   },
   shadow: {
     md: {
-      borderRadius: 16,
-      padding: 16,
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
@@ -46,7 +44,6 @@ const utility = {
       elevation: 3,
       backgroundColor: 'white',
       width: '100%',
-      marginBottom: 16,
     },
   },
 }

@@ -4,6 +4,7 @@ import SignIn from '~/features/SignIn'
 import SignUp from '~/features/SignUp'
 import PasswordReset from '~/features/PasswordReset'
 import OurLocation from '~/features/OurLocation'
+import VaccineResult from '~/features/VaccineResult'
 
 export default function MainTab() {
   return (
@@ -13,6 +14,7 @@ export default function MainTab() {
         backgroundColor: 'white',
       }}>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Vaccine Result" component={VaccineResult} />
       <Tab.Screen name="Location" component={OurLocation} />
       <Tab.Screen name="Riwayat" component={SignIn} />
       <Tab.Screen name="Akun" component={SignUp} />
