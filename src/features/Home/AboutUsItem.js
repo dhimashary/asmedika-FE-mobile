@@ -16,9 +16,7 @@ export default function AboutUsItem({ item }) {
         <View style={styles.bulletContainer}>
           <Image source={bullet} style={styles.icon} />
         </View>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{item.title}</Text>
-        </View>
+        <Text style={styles.title}>{item.title}</Text>
       </HStack>
       <BaseText>{item.text}</BaseText>
     </View>
@@ -40,24 +38,22 @@ const styles = StyleSheet.create({
     width: (width * 70) / 100,
     marginRight: baseStyles.space.sm,
     backgroundColor: 'white',
+    // borderWidth: 1,
+    // borderColor: baseStyles.color.primary
   },
   center: {
     alignItems: 'center',
     marginBottom: baseStyles.space.sm,
   },
   icon: {
-    width: 40,
-    height: 40,
-    marginRight: baseStyles.space.sm,
-  },
-  bulletContainer: {
     flex: 1,
   },
-  titleContainer: {
-    flex: 5,
-    paddingLeft: baseStyles.space.sm,
+  bulletContainer: {
+    flex: 2,
   },
   title: {
+    flex: 8,
+    paddingLeft: baseStyles.space.sm,
     fontSize: baseStyles.font.size.sm,
     fontFamily: 'nunitoSemiBold',
   },

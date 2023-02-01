@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   bgImage: {
     width: width,
     backgroundColor: baseStyles.color.secondary,
-    height: (height * 4) / 12,
+    height: (height * 5) / 12,
     marginBottom: baseStyles.space.md,
   },
   mainContent: {

@@ -37,8 +37,10 @@ export default function AboutUs() {
         <ScrollView
           horizontal={true}
           style={{
-            padding: baseStyles.space.xs,
-          }}>
+            // padding: baseStyles.space.xs,
+            flex: 1,
+          }}
+          contentContainerStyle={{ flexGrow: 1, padding: baseStyles.space.sm }}>
           {items.map(item => (
             <AboutUsItem key={item.id} item={item} />
           ))}

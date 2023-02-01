@@ -5,6 +5,7 @@ import SignUp from '~/features/SignUp'
 import PasswordReset from '~/features/PasswordReset'
 import OurLocation from '~/features/OurLocation'
 import VaccineResult from '~/features/VaccineResult'
+import Order from '~/features/Order'
 
 export default function MainTab() {
   return (
@@ -18,7 +19,7 @@ export default function MainTab() {
       <Tab.Screen name="Location" component={OurLocation} />
       <Tab.Screen name="Riwayat" component={SignIn} />
       <Tab.Screen name="Akun" component={SignUp} />
-      <Tab.Screen name="Akun2" component={PasswordReset} />
+      <Tab.Screen name="Order" component={Order} />
     </Tab.Navigator>
   )
 }

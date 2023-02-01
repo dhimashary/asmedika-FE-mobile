@@ -16,8 +16,13 @@ export default function NavigationHeading({ title }) {
         style={{
           padding: baseStyles.space.sm,
         }}>
-        <MaterialCommunityIcons name="chevron-left" size={40} color="#3B3B3B" />
         <View style={styles.headingTitleContainer}>
+          <MaterialCommunityIcons
+            name="chevron-left"
+            size={40}
+            color="#3B3B3B"
+            style={styles.icon}
+          />
           <View style={{ backgroundColor: 'white' }}>
             <BaseTitle style={styles.headingTitle}>{title}</BaseTitle>
           </View>
@@ -32,13 +37,16 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingLeft: baseStyles.space.sm,
+    justifyContent: 'center',
   },
   headingTitle: {
     fontSize: baseStyles.space.md,
-    textAlign: 'center',
-    backgroundColor: 'white',
-    textAlignVertical: 'center',
     marginBottom: 0,
+    marginTop: 4,
+  },
+  icon: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
   },
 })

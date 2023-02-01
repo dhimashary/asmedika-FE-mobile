@@ -1,26 +1,35 @@
 import ScreenContainer from '~/components/base/ScreenContainer'
 import ContentView from '~/components/base/ContentView'
-import VaccineProgram from './VaccineProgram'
-import Profile from './Profile'
-import SwabResult from './SwabResult'
 import NavigationHeading from '~/components/base/NavigationHeading'
-import baseStyles from '~/styles'
+import MyComponent from './ProductOption'
 
-export default function VaccineResult() {
+const SWAB_DATA = [
+  {
+    id: 1,
+    name: 'PCR',
+  },
+  {
+    id: 2,
+    name: 'Antigen',
+  },
+  {
+    id: 3,
+    name: 'Antibodi',
+  },
+]
+
+export default function Order() {
   return (
     <ScreenContainer
       style={{
         alignItems: 'center',
       }}>
-      <NavigationHeading title="Hasil Vaksin dan Tes Swab" />
+      <NavigationHeading title="Pilih Jenis Vaksin" />
       <ContentView
         style={{
           flex: 9,
-          paddingBottom: baseStyles.space.sm,
         }}>
-        <Profile />
-        <VaccineProgram />
-        <SwabResult />
+        <MyComponent />
       </ContentView>
     </ScreenContainer>
   )
