@@ -4,8 +4,11 @@ import BaseHeader from './BaseHeader'
 import HStack from './HStack'
 import BaseTitle from './BaseTitle'
 import baseStyles from '~/styles'
+import { useNavigation } from '@react-navigation/native'
 
 export default function NavigationHeading({ title }) {
+  const navigation = useNavigation()
+
   return (
     <BaseHeader
       style={{
@@ -22,6 +25,9 @@ export default function NavigationHeading({ title }) {
             size={40}
             color="#3B3B3B"
             style={styles.icon}
+            onPress={() => {
+              navigation.goBack()
+            }}
           />
           <View style={{ backgroundColor: 'white' }}>
             <BaseTitle style={styles.headingTitle}>{title}</BaseTitle>

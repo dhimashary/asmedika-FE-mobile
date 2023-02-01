@@ -1,26 +1,11 @@
 import ScreenContainer from '~/components/base/ScreenContainer'
 import ContentView from '~/components/base/ContentView'
 import NavigationHeading from '~/components/base/NavigationHeading'
-import ProductOption from './ProductOption'
 import { useState } from 'react'
 import PrimaryButton from '~/components/primary/PrimaryButton'
+import SelectOrderDetailForm from './SelectOrderDetailForm'
 
-const SWAB_DATA = [
-  {
-    id: 1,
-    name: 'PCR',
-  },
-  {
-    id: 2,
-    name: 'Antigen',
-  },
-  {
-    id: 3,
-    name: 'Antibodi',
-  },
-]
-
-export default function Order({ navigation }) {
+export default function SelectOrderDetail() {
   const [selectedProduct, setSelectedProduct] = useState(1)
 
   return (
@@ -28,18 +13,14 @@ export default function Order({ navigation }) {
       style={{
         alignItems: 'center',
       }}>
-      <NavigationHeading title="Pilih Jenis Swab" />
+      <NavigationHeading title="Pilih Lokasi dan Jadwal" />
       <ContentView
         style={{
           flex: 9,
           justifyContent: 'space-between',
         }}>
-        <ProductOption
-          data={SWAB_DATA}
-          selectedProduct={selectedProduct}
-          setSelectedProduct={setSelectedProduct}
-        />
-        <PrimaryButton onPress={() => navigation.navigate('OrderDetail')}>
+        <SelectOrderDetailForm />
+        <PrimaryButton onPress={() => console.log('test')}>
           Lanjut
         </PrimaryButton>
       </ContentView>
