@@ -8,8 +8,7 @@ import baseStyles from '~/styles'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import LocationCard from './LocationCard'
 import ContentView from '~/components/base/ContentView'
-import { Dimensions } from 'react-native'
-const height = Dimensions.get('window').height
+import { Dimensions, KeyboardAvoidingView, Platform } from 'react-native'
 
 const locations = [
   {
@@ -54,71 +53,81 @@ export default function OurLocation() {
       style={{
         alignItems: 'center',
       }}>
-      <BaseHeader
+      <KeyboardAvoidingView
         style={{
           flex: 1,
-          // backgroundColor: 'red',
-          // alignItems: 'center',
-        }}>
-        <HStack
+          width: '100%',
+          alignItems: 'center',
+        }}
+        behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS == 'ios' ? 0 : 20}
+        enabled={Platform.OS === 'ios' ? true : false}>
+        <BaseHeader
           style={{
-            padding: baseStyles.space.sm,
+            flex: 1,
+            // backgroundColor: 'red',
             // alignItems: 'center',
           }}>
-          <View>
-            <MaterialCommunityIcons
-              name="chevron-left"
-              size={40}
-              color="#3B3B3B"
-            />
-          </View>
-          <View
+          <HStack
             style={{
-              flex: 10,
-              flexDirection: 'row',
-              alignItems: 'center',
-              backgroundColor: '#F5F5F5',
-              borderRadius: baseStyles.space.xs,
-              overflow: 'hidden',
+              padding: baseStyles.space.sm,
+              // alignItems: 'center',
             }}>
-            <View
-              style={{
-                flex: 1,
-                paddingLeft: baseStyles.space.xs,
-              }}>
+            <View>
               <MaterialCommunityIcons
-                name="magnify"
-                size={28}
-                color="#9E9E9E"
+                name="chevron-left"
+                size={40}
+                color="#3B3B3B"
               />
             </View>
-            <TextInput
-              value={text}
-              onChangeText={text => setText(text)}
-              placeholder="Cari Lokasi"
+            <View
               style={{
-                flex: 9,
+                flex: 10,
+                flexDirection: 'row',
+                alignItems: 'center',
                 backgroundColor: '#F5F5F5',
-                paddingVertical: baseStyles.space.xs,
-                fontFamily: 'nunitoBold',
-                fontSize: baseStyles.font.size.sm,
-                color: '#9E9E9E',
-              }}
-            />
-          </View>
-        </HStack>
-      </BaseHeader>
-      <ContentView
-        style={{
-          flex: 9,
-          // backgroundColor: 'red'
-        }}>
-        <FlatList
-          data={locations}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => <LocationCard location={item} />}
-        />
-      </ContentView>
+                borderRadius: baseStyles.space.xs,
+                overflow: 'hidden',
+              }}>
+              <View
+                style={{
+                  flex: 1,
+                  paddingLeft: baseStyles.space.xs,
+                }}>
+                <MaterialCommunityIcons
+                  name="magnify"
+                  size={28}
+                  color="#9E9E9E"
+                />
+              </View>
+              <TextInput
+                value={text}
+                onChangeText={text => setText(text)}
+                placeholder="Cari Lokasi"
+                style={{
+                  flex: 9,
+                  backgroundColor: '#F5F5F5',
+                  paddingVertical: baseStyles.space.xs,
+                  fontFamily: 'nunitoBold',
+                  fontSize: baseStyles.font.size.sm,
+                  color: '#9E9E9E',
+                }}
+              />
+            </View>
+          </HStack>
+        </BaseHeader>
+        <ContentView
+          style={{
+            flex: 9,
+            // backgroundColor: 'red'
+          }}>
+          <FlatList
+            data={locations}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => <LocationCard location={item} />}
+          />
+        </ContentView>
+      </KeyboardAvoidingView>
     </ScreenContainer>
   )
 }
