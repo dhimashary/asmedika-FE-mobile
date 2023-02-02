@@ -1,13 +1,10 @@
 import ScreenContainer from '~/components/base/ScreenContainer'
 import ContentView from '~/components/base/ContentView'
 import NavigationHeading from '~/components/base/NavigationHeading'
-import { useState } from 'react'
 import PrimaryButton from '~/components/primary/PrimaryButton'
 import SelectOrderDetailForm from './SelectOrderDetailForm'
 
-export default function SelectOrderDetail() {
-  const [selectedProduct, setSelectedProduct] = useState(1)
-
+export default function SelectOrderDetail({ navigation }) {
   return (
     <ScreenContainer
       style={{
@@ -20,7 +17,7 @@ export default function SelectOrderDetail() {
           justifyContent: 'space-between',
         }}>
         <SelectOrderDetailForm />
-        <PrimaryButton onPress={() => console.log('test')}>
+        <PrimaryButton onPress={() => navigation.navigate('DetailIdentity')}>
           Lanjut
         </PrimaryButton>
       </ContentView>

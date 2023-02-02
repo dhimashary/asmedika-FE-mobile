@@ -23,7 +23,7 @@ import {
 import { Provider as PaperProvider } from 'react-native-paper'
 import theme from '~/theme/paperTheme'
 import MainStack from '~/navigations/navigators/MainStack'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
