@@ -28,7 +28,7 @@ export default function Order({ navigation }) {
       style={{
         alignItems: 'center',
       }}>
-      <NavigationHeading title="Pilih Jenis Swab" />
+      <NavigationHeading title="Pilih Jenis Swab" enableGoBack />
       <ContentView
         style={{
           flex: 9,

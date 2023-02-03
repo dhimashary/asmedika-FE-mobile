@@ -3,6 +3,8 @@ import Order from '~/features/Order'
 import SelectOrderDetail from '~/features/Order/SelectOrderDetail'
 import OrderDetailIdentity from '~/features/Order/OrderDetaildentity'
 import OrderConfirmation from '~/features/Order/OrderConfirmation'
+import OrderLoading from '~/features/Order/OrderLoading'
+import OrderSuccess from '~/features/Order/OrderSuccess'
 
 function OrderStack() {
   return (
@@ -10,7 +12,9 @@ function OrderStack() {
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen name="OrderSuccess" component={OrderSuccess} />
       <Stack.Screen name="OrderConfirmation" component={OrderConfirmation} />
+      <Stack.Screen name="OrderLoading" component={OrderLoading} />
       <Stack.Screen
         name="OrderDetailIdentity"
         component={OrderDetailIdentity}

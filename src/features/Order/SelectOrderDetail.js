@@ -10,7 +10,7 @@ export default function SelectOrderDetail({ navigation }) {
       style={{
         alignItems: 'center',
       }}>
-      <NavigationHeading title="Pilih Lokasi dan Jadwal" />
+      <NavigationHeading title="Pilih Lokasi dan Jadwal" enableGoBack />
       <ContentView
         style={{
           flex: 9,

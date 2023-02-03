@@ -16,7 +16,7 @@ const profiles = [
     identityNumber: '31512312312098',
   },
   {
-    id: 1,
+    id: 2,
     fullName: 'Hary Kane',
     gender: 'Laki - laki',
     birthDate: '02 October 2001',
@@ -31,13 +31,13 @@ const product = {
   totalPrice: 'Rp. 500.000',
 }
 
-export default function OrderConfirmation() {
+export default function OrderConfirmation({ navigation }) {
   return (
     <ScreenContainer
       style={{
         alignItems: 'center',
       }}>
-      <NavigationHeading title="Rincian Pendaftaran" />
+      <NavigationHeading title="Rincian Pendaftaran" enableGoBack />
       <View
         style={{
           flex: 9,
@@ -50,6 +50,7 @@ export default function OrderConfirmation() {
           }}>
           {profiles.map((profile, idx) => (
             <View
+              key={profile.id}
               style={[
                 baseStyles.shadow.md,
                 {
@@ -77,7 +78,12 @@ export default function OrderConfirmation() {
             </View>
           ))}
           <ProductType product={product} />
-          <PrimaryButton>Daftar</PrimaryButton>
+          <PrimaryButton
+            onPress={() => {
+              navigation.navigate('OrderLoading')
+            }}>
+            Daftar
+          </PrimaryButton>
         </ScrollView>
       </View>
     </ScreenContainer>

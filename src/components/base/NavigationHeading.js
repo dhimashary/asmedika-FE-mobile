@@ -6,7 +6,7 @@ import BaseTitle from './BaseTitle'
 import baseStyles from '~/styles'
 import { useNavigation } from '@react-navigation/native'
 
-export default function NavigationHeading({ title }) {
+export default function NavigationHeading({ title, enableGoBack }) {
   const navigation = useNavigation()
 
   return (
@@ -20,15 +20,17 @@ export default function NavigationHeading({ title }) {
           padding: baseStyles.space.sm,
         }}>
         <View style={styles.headingTitleContainer}>
-          <MaterialCommunityIcons
-            name="chevron-left"
-            size={40}
-            color="#3B3B3B"
-            style={styles.icon}
-            onPress={() => {
-              navigation.goBack()
-            }}
-          />
+          {enableGoBack && (
+            <MaterialCommunityIcons
+              name="chevron-left"
+              size={40}
+              color="#3B3B3B"
+              style={styles.icon}
+              onPress={() => {
+                navigation.goBack()
+              }}
+            />
+          )}
           <View style={{ backgroundColor: 'white' }}>
             <BaseTitle style={styles.headingTitle}>{title}</BaseTitle>
           </View>

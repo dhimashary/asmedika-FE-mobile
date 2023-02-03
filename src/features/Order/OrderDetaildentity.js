@@ -68,7 +68,7 @@ export default function OrderDetailIdentity({ navigation }) {
       style={{
         alignItems: 'center',
       }}>
-      <NavigationHeading title="Daftar Identitas Diri" />
+      <NavigationHeading title="Daftar Identitas Diri" enableGoBack />
       <ContentView
         style={{
           flex: 9,

@@ -4,7 +4,7 @@ import baseStyles from '~/styles'
 
 function PrimaryButton({ children, ...rest }) {
   return (
-    <Button {...rest} mode="contained" style={styles.submitButton}>
+    <Button {...rest} mode="contained" style={[styles.submitButton]}>
       <Text style={styles.submitText}>{children}</Text>
     </Button>
   )
